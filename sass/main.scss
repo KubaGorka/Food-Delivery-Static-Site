@@ -1,0 +1,405 @@
+@import "./_defaults.scss";
+
+.nav {
+  @include margins;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 7rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $Light;
+  z-index: 9999;
+  .logo {
+    width: 7rem;
+  }
+  .burger {
+    width: 1.25rem;
+    height: 1rem;
+    position: relative;
+    .burger-part {
+      position: absolute;
+      width: 100%;
+      height: 0.2rem;
+      background-color: $Secondary-Text;
+      border-radius: 20px;
+      &:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:nth-child(3) {
+        bottom: 0;
+      }
+    }
+  }
+  .menu {
+    position: absolute;
+    top: calc(7rem - 1px);
+    left: 0;
+    background-color: $Light;
+    list-style: none;
+    width: 100%;
+    border-bottom: 1px solid $Primary-Main;
+    .menu-item {
+      padding: 0.5rem;
+    }
+  }
+}
+.hero {
+  padding-top: 3rem;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 25%,
+    rgba(250, 250, 250, 1) 50%
+  );
+  .food-app {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: $Secondary-Text;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  .primary-text-hero {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    color: $Primary-Text;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  .secondary-text-hero {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    color: $Secondary-Text;
+    font-weight: 500;
+    margin: 0 4%;
+    margin-bottom: 2rem;
+  }
+  .buttons-hero {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    .button {
+      &:first-child {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .app-images {
+    display: grid;
+    grid-template-columns: 1fr 2.25rem 1fr;
+    grid-template-rows: 5.25rem 1fr 2.5rem;
+    width: 100%;
+    position: relative;
+    height: 32rem;
+    .image-left {
+      width: 100%;
+      max-width: 15rem;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      z-index: 200;
+      justify-self: end;
+      @include dropShadow;
+    }
+    .image-right {
+      position: relative;
+      width: 100%;
+      max-width: 14rem;
+      z-index: 100;
+      grid-column-start: 2;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      grid-row-end: 4;
+      justify-self: start;
+    }
+  }
+}
+.separator {
+  padding: 5.25rem 0;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  color: $Dark;
+  border-bottom: 3px solid #e4e4e4;
+}
+.app-showcase {
+  margin-top: 4rem;
+  display: flex;
+  flex-flow: column-reverse;
+  align-items: center;
+  .app-text {
+    @include margins;
+    * {
+      margin-bottom: 2rem;
+    }
+    h4 {
+      color: $Primary-Main;
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+      font-weight: 700;
+    }
+    h2 {
+      color: $Primary-Text;
+      font-size: 2.5rem;
+      line-height: 4.5rem;
+      font-weight: 700;
+    }
+    h3 {
+      color: $Secondary-Text;
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+      font-weight: 500;
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 2rem;
+    }
+  }
+  img {
+    @include dropShadow;
+    width: 18rem;
+  }
+}
+.download-app {
+  height: 36rem;
+  padding: 6rem 0;
+  background: $Primary-Text;
+  margin-top: 4rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  .primary-text-download {
+    color: $Light;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    font-weight: bold;
+    width: 80%;
+  }
+  .secondary-text-download {
+    color: $Secondary-Text;
+    font-size: 1.5rem;
+    font-weight: 500;
+    width: 70%;
+    margin: 1rem 0;
+  }
+  .buttons {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    .button {
+      border-radius: 10px;
+      font-size: 1rem;
+      &:nth-child(1) {
+        width: 8rem;
+        margin-right: 0.5rem;
+      }
+      &:nth-child(2) {
+        width: 11rem;
+        color: $Light;
+        border-color: $Light;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+footer {
+  height: 11em;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  .logo {
+    display: none;
+  }
+  .icons {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 11rem;
+    img {
+      width: 2.5rem;
+    }
+  }
+  .copyright {
+    font-family: $Font-Roboto;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #5c5c5c;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: $bp-small) {
+  .hero {
+    .buttons-hero {
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+      .button:nth-child(1) {
+        margin-bottom: 0;
+        margin-right: 1rem;
+      }
+      .button:nth-child(2) {
+        margin-left: 1rem;
+      }
+    }
+    .app-images {
+      margin: 0 auto;
+      width: 30rem;
+    }
+  }
+}
+@media (min-width: $bp-medium) {
+  .nav {
+    height: 8rem;
+    .logo {
+      width: 10rem;
+    }
+    .burger {
+      display: none;
+    }
+    .menu-hidden {
+      display: initial;
+    }
+    .menu {
+      position: unset;
+      list-style: none;
+      border-bottom: none;
+      display: flex;
+      width: auto;
+      .menu-item {
+        padding: 0.5rem;
+        font-family: $Font-Primary;
+        font-weight: 600;
+        &:not(:last-child){
+          margin-right: 7rem;
+        }
+        a:hover{
+          color: $Primary-Main;
+          transition: 0.25s;
+        }
+      }
+    }
+  }
+  .hero {
+    padding-top: 0;
+    margin-bottom: 8rem;
+    .hero-text {
+      height: 39rem;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      background: url("../assets/images/Landing.png");
+      background-size: cover;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(23, 16, 16, 0.6);
+        z-index: 10;
+      }
+    }
+    .food-app,
+    .primary-text-hero,
+    .secondary-text-hero {
+      color: white;
+      z-index: 30;
+    }
+    .buttons-hero {
+      z-index: 30;
+      .button:nth-child(2) {
+        border-color: $Light;
+        color: $Light;
+      }
+    }
+    .app-images {
+      margin-top: -10rem;
+    }
+  }
+  .separator {
+    font-size: 2rem;
+    border-bottom: none;
+    border-top: 3px solid #e4e4e4;
+  }
+  .app-showcase {
+    @include margins;
+    flex-flow: row;
+    text-align: left;
+    justify-content: flex-end;
+    &:nth-child(odd) {
+      flex-flow: row-reverse;
+    }
+    img {
+      margin: 0 12.5%;
+    }
+    .app-text {
+      padding: 0;
+      width: 50%;
+      h4,
+      h2 {
+        margin-bottom: 0.5rem;
+      }
+      h3 {
+        margin: 0;
+      }
+    }
+  }
+  .download-app {
+    background: url("../assets/images/Download.png");
+    background-size: cover;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(37, 43, 66, 0.4);
+      z-index: 10;
+    }
+    .primary-text-download,
+    .secondary-text-download,
+    .buttons {
+      color: white;
+      z-index: 30;
+      .button {
+        &:nth-child(1) {
+          margin-right: 1rem;
+        }
+        &:nth-child(2) {
+          margin-left: 1rem;
+        }
+      }
+    }
+    .secondary-text-download {
+      margin: 2rem 0 4rem 0;
+    }
+  }
+  footer {
+    @include margins;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 12rem;
+    .logo {
+      display: initial;
+      width: 10rem;
+    }
+  }
+}
+@media (min-width: $bp-large) {
+}

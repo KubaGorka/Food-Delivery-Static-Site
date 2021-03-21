@@ -1,0 +1,74 @@
+//Colors
+$Primary-Main: #FA4A0C;
+$Primary-Text: #252B42;
+$Secondary-Text: #737373;
+$Light: #FFFFFF;
+$Dark: #000000;
+//Fonts
+$Font-Primary: 'Montserrat', sans-serif;
+$Font-Poppins: 'Poppins', sans-serif;
+$Font-Roboto: 'Roboto', sans-serif;
+$base-font: 16px;
+//Breakpoints
+$bp-small: 48em; // 768px
+$bp-medium: 64em; // 1024px
+$bp-large: 85.375em; // 1366px
+$bp-xlarge: 120em; // 1920px
+//Default styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $Font-Primary;
+}
+body {
+  font-size: $base-font;
+  padding-top: 7rem;
+  text-align: center;
+  font-family: $Font-Primary;
+}
+.button {
+  all: unset;
+  width: 14.75rem;
+  height: 4.25rem;
+  border-radius: 2rem;
+  font-family: $Font-Primary;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.button-full {
+  background-color: $Primary-Main;
+  color: $Light;
+}
+.button-empty {
+  border: 1px solid $Primary-Main;
+  color: $Primary-Main;
+}
+.menu-hidden{
+  display: none;
+}
+.menu-active{
+  color: $Primary-Main;
+}
+a{
+  text-decoration: none;
+  color: $Dark;
+}
+//Mixins
+@mixin margins {
+    padding: 0 4%;
+    @media (min-width: $bp-medium) {
+      padding: 0 8%;
+    }
+
+    @media (min-width: $bp-large) {
+      padding: 0 12.5%;
+    }
+
+    @media (min-width: $bp-xlarge) {
+      padding: 0 20%;
+    }
+}
+@mixin dropShadow{
+  filter:drop-shadow(50px 30px 150px rgba(46, 4, 4,0.21));
+}
