@@ -13,6 +13,7 @@
   align-items: center;
   background-color: $Light;
   z-index: 9999;
+  transition: top 0.5s;
   .logo {
     width: 7rem;
   }

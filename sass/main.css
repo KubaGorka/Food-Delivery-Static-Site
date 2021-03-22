@@ -66,6 +66,8 @@ a {
           align-items: center;
   background-color: #FFFFFF;
   z-index: 9999;
+  -webkit-transition: top 0.5s;
+  transition: top 0.5s;
 }
 
 @media (min-width: 64em) {
